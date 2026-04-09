@@ -1,0 +1,211 @@
+🧠 BRAND FOUNDATION (MuskMelon Labs)
+🎯 Brand Positioning
+
+“An experimental lab building unconventional software products powered by open systems and AI.”
+
+🗣️ Tone of Voice
+Sharp, confident, slightly futuristic
+Minimal words, high clarity
+No fluff, no marketing jargon
+
+👉 Style:
+
+Short sentences.
+Bold statements.
+Clear intent.
+🎨 DESIGN SYSTEM (VERY IMPORTANT)
+🔥 Color Palette
+
+Primary (your brand):
+
+Accent Orange → #FF6A00
+Deep Orange → #FF8C42
+
+Base:
+
+Background Dark → #0B0F14
+Card Dark → #111827
+Text Primary → #E5E7EB
+Text Secondary → #9CA3AF
+
+Support:
+
+Border → #1F2937
+🔺 Style Rules (Your Signature Look)
+
+👉 This is your UNIQUE twist:
+
+❌ No rounded corners
+✅ Use:
+clip-path
+angled edges
+diagonal cuts
+
+Example direction:
+
+Cards: trapezoid / slanted edges
+Buttons: sharp rectangles
+Sections: slight diagonal separators
+✍️ Typography
+Headings: Bold, tight spacing
+Body: Clean, readable
+
+Example:
+
+Headings → 48px / 64px
+Subtext → 16px / 18px
+🏗️ COMPLETE WEBSITE STRUCTURE + CONTENT
+🚀 1. HERO SECTION
+Layout:
+Left: Text
+Right: Abstract geometric visual
+Content:
+Heading:
+
+Build. Break. Evolve.
+
+Subheading:
+
+Experimental software products built on open systems, AI, and unconventional thinking.
+
+CTA:
+Primary: Explore Products
+Secondary: View Vision
+🧩 2. TRUST / LOGOS SECTION
+Purpose:
+
+Visual credibility
+
+Replace logos with:
+“Open Systems”
+“AI Tools”
+“Developer First”
+“Built for Scale”
+⚡ 3. PRODUCTS / SERVICES GRID
+Title:
+
+What We’re Building
+
+Cards (6 like your reference):
+1. GitArchive
+
+Unlimited storage powered by Git infrastructure.
+
+2. AI Assist Systems
+
+Intelligent tools designed to think with you.
+
+3. Experimental Interfaces
+
+New ways to interact with software.
+
+4. Automation Tools
+
+Reduce friction. Increase output.
+
+5. Open Infrastructure
+
+Built on systems that scale freely.
+
+6. Data Systems
+
+Structured, searchable, extensible.
+
+🧠 4. CASE STUDIES / PROJECTS
+Title:
+
+What We’ve Built
+
+Card format (3 cards):
+GitArchive
+
+A new way to think about storage using Git as infrastructure.
+
+AI Cognition System
+
+Persona-based thinking models for decision making.
+
+Internal Tools
+
+Tools built to solve real problems fast.
+
+🔄 5. PROCESS SECTION (Accordion style)
+Title:
+
+How We Work
+
+Steps:
+
+Ideation
+
+Identify unconventional opportunities.
+
+Rapid Prototyping
+
+Build fast. Test faster.
+
+System Design
+
+Structure for scale.
+
+Iteration
+
+Refine based on real usage.
+
+Deployment
+
+Ship early. Improve continuously.
+
+👥 6. TEAM SECTION
+Title:
+
+The Builders
+
+Content:
+
+Keep minimal:
+
+Small team. High leverage.
+Focused on building systems that matter.
+
+👉 You can add real profiles later
+
+💬 7. TESTIMONIAL / PHILOSOPHY (IMPORTANT CHANGE)
+
+Instead of fake testimonials:
+
+Title:
+
+Our Thinking
+
+Replace with:
+
+“We don’t build for trends.
+We build for long-term systems.”
+
+“Constraints create innovation.”
+
+“Simplicity scales.”
+
+📩 8. CONTACT SECTION
+Title:
+
+Let’s Build Something Interesting
+
+Form fields:
+Name
+Email
+Message
+
+CTA:
+👉 Start a Conversation
+
+⚫ 9. FOOTER
+
+Keep minimal:
+
+MuskMelon Labs
+Links:
+Products
+Vision
+Contact

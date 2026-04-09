@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Muskmelon Labs"
+version = "1.0.0"
+id = "artifacts/muskmelon-website"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23394
+
+[services.development]
+run = "pnpm --filter @workspace/muskmelon-website run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/muskmelon-website", "run", "build" ]
+publicDir = "artifacts/muskmelon-website/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23394"
+BASE_PATH = "/"
