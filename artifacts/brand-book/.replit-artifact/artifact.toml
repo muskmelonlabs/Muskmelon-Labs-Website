@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/brand-book/"
+title = "Muskmelon Labs Brand Book"
+version = "1.0.0"
+id = "artifacts/brand-book"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/brand-book/" ]
+localPort = 23911
+
+[services.development]
+run = "pnpm --filter @workspace/brand-book run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/brand-book", "run", "build" ]
+publicDir = "artifacts/brand-book/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23911"
+BASE_PATH = "/brand-book/"

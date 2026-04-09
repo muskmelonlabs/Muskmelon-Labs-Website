@@ -16,6 +16,12 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **API codegen**: Orval (from OpenAPI spec)
 - **Build**: esbuild (CJS bundle)
 
+## Artifacts
+
+- **brand-book** (`artifacts/brand-book/`) — Muskmelon Labs Brand Identity System. React + Vite, no backend. Serves at `/brand-book/`. Includes: Identity, Values, Logo, Color, Typography, Design Language, Product Principles sections. Dark-first theme, Inter font, faceted geometric visual system derived from the logo SVG.
+- **mockup-sandbox** (`artifacts/mockup-sandbox/`) — Canvas mockup server. Brand book mockup lives at `src/components/mockups/brand-book/MuskmelonBrandBook.tsx`.
+- **api-server** (`artifacts/api-server/`) — Shared Express 5 API backend. Serves at `/api`.
+
 ## Key Commands
 
 - `pnpm run typecheck` — full typecheck across all packages
