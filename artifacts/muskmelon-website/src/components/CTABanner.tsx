@@ -3,13 +3,13 @@ import { FadeIn } from "./FadeIn";
 export function CTABanner() {
   return (
     <section style={{
-      background: "#0B0F14",
+      background: "#1e1e1e",
       padding: "0 64px 64px",
     }}>
       <FadeIn>
         <div style={{
-          background: "#111827",
-          border: "1px solid #1F2937",
+          background: "#252525",
+          border: "1px solid #2e2e2e",
           padding: "52px 56px",
           display: "grid",
           gridTemplateColumns: "1fr auto",
@@ -18,7 +18,6 @@ export function CTABanner() {
           position: "relative",
           overflow: "hidden",
         }}>
-          {/* Decorative star */}
           <svg
             aria-hidden
             style={{ position: "absolute", right: 200, top: "50%", transform: "translateY(-50%)", opacity: 0.06 }}
@@ -46,6 +45,7 @@ export function CTABanner() {
               lineHeight: 1.1,
               margin: 0,
               marginBottom: 14,
+              fontFamily: "'Inter', sans-serif",
             }}>
               Let's build something{" "}
               <span style={{ color: "#FF6A00" }}>interesting.</span>

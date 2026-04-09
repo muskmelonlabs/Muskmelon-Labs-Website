@@ -24,9 +24,9 @@ const testimonials = [
 export function Philosophy() {
   return (
     <section id="vision" style={{
-      background: "#0B0F14",
+      background: "#1e1e1e",
       padding: "96px 64px",
-      borderBottom: "1px solid #1F2937",
+      borderBottom: "1px solid #2e2e2e",
     }}>
       <FadeIn>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
@@ -39,6 +39,7 @@ export function Philosophy() {
               letterSpacing: "-0.03em",
               lineHeight: 1,
               margin: 0,
+              fontFamily: "'Inter', sans-serif",
             }}>
               Our Thinking
             </h2>
@@ -56,7 +57,6 @@ export function Philosophy() {
               gap: 28,
               minHeight: 220,
             }}>
-              {/* Stars row */}
               <div style={{ display: "flex", gap: 4 }}>
                 {[...Array(5)].map((_, si) => (
                   <svg key={si} width="12" height="12" viewBox="0 0 12 12" fill="#FF6A00">
@@ -77,12 +77,12 @@ export function Philosophy() {
                 "{t.quote}"
               </blockquote>
 
-              <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 16, borderTop: "1px solid #1F2937" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 16, borderTop: "1px solid #2e2e2e" }}>
                 <div style={{
                   width: 36,
                   height: 36,
-                  background: "#111827",
-                  border: "1px solid #2D3F55",
+                  background: "#252525",
+                  border: "1px solid #444444",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
@@ -96,7 +96,7 @@ export function Philosophy() {
                 </div>
                 <div>
                   <div style={{ fontSize: 12, fontWeight: 700, color: "#F9FAFB" }}>{t.name}</div>
-                  <div style={{ fontSize: 10, color: "#4B5563", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                  <div style={{ fontSize: 10, color: "#555555", letterSpacing: "0.08em", textTransform: "uppercase" }}>
                     {t.company}
                   </div>
                 </div>

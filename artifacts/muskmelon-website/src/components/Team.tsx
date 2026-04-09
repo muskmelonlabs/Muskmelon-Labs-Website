@@ -13,28 +13,28 @@ const members = [
     role: "Infrastructure",
     bio: "Open systems evangelist. If it can be built without a vendor, it will be.",
     initials: "LE",
-    color: "#2D3F55",
+    color: "#333333",
   },
   {
     name: "Design Lead",
     role: "Product Design",
     bio: "Systems thinker. Sharp edges, clear hierarchy, no unnecessary decoration.",
     initials: "DL",
-    color: "#374151",
+    color: "#3a3a3a",
   },
   {
     name: "AI Researcher",
     role: "AI / Cognition",
     bio: "Building tools for thinking — not just tools for generating.",
     initials: "AR",
-    color: "#1F2937",
+    color: "#2a2a2a",
   },
   {
     name: "Open Position",
     role: "Developer",
     bio: "We're looking for builders who care about systems over features.",
     initials: "?",
-    color: "#111827",
+    color: "#222222",
     open: true,
   },
 ];
@@ -42,10 +42,10 @@ const members = [
 export function Team() {
   return (
     <section id="team" style={{
-      background: "#080C10",
+      background: "#161616",
       padding: "96px 64px",
-      borderBottom: "1px solid #1F2937",
-      borderTop: "1px solid #1F2937",
+      borderBottom: "1px solid #2e2e2e",
+      borderTop: "1px solid #2e2e2e",
     }}>
       <FadeIn>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
@@ -58,6 +58,7 @@ export function Team() {
               letterSpacing: "-0.03em",
               lineHeight: 1,
               margin: 0,
+              fontFamily: "'Inter', sans-serif",
             }}>
               The Builders
             </h2>
@@ -73,16 +74,16 @@ export function Team() {
         {members.map((m, i) => (
           <FadeIn key={m.name} delay={i * 60}>
             <div
-              className={m.open ? "card" : "card"}
               style={{
+                background: "#252525",
                 padding: "28px 24px",
                 display: "flex",
                 flexDirection: "column",
                 gap: 16,
-                border: m.open ? "1px dashed #1F2937" : "1px solid #1F2937",
+                border: m.open ? "1px dashed #2e2e2e" : "1px solid #2e2e2e",
+                transition: "border-color 0.2s",
               }}
             >
-              {/* Avatar */}
               <div style={{
                 width: 52,
                 height: 52,
@@ -92,7 +93,7 @@ export function Team() {
                 justifyContent: "center",
                 fontSize: 14,
                 fontWeight: 800,
-                color: m.open ? "#374151" : "#F9FAFB",
+                color: m.open ? "#444444" : "#F9FAFB",
                 letterSpacing: "-0.02em",
                 flexShrink: 0,
                 clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
@@ -104,7 +105,7 @@ export function Team() {
                 <div style={{
                   fontSize: 14,
                   fontWeight: 700,
-                  color: m.open ? "#374151" : "#F9FAFB",
+                  color: m.open ? "#444444" : "#F9FAFB",
                   letterSpacing: "-0.01em",
                   marginBottom: 4,
                 }}>
@@ -115,31 +116,30 @@ export function Team() {
                   fontWeight: 700,
                   textTransform: "uppercase",
                   letterSpacing: "0.12em",
-                  color: m.open ? "#2D3F55" : "#FF6A00",
+                  color: m.open ? "#444444" : "#FF6A00",
                   marginBottom: 12,
                 }}>
                   {m.role}
                 </div>
-                <p style={{ fontSize: 11, color: "#4B5563", lineHeight: 1.6 }}>
+                <p style={{ fontSize: 11, color: "#666666", lineHeight: 1.6 }}>
                   {m.bio}
                 </p>
               </div>
 
-              {/* LinkedIn-style icon */}
               {!m.open && (
                 <div style={{
                   marginTop: "auto",
                   width: 24,
                   height: 24,
-                  border: "1px solid #1F2937",
+                  border: "1px solid #2e2e2e",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
                 }}>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-                    <rect x="0.5" y="3.5" width="2" height="7" stroke="#4B5563" strokeWidth="1"/>
-                    <circle cx="1.5" cy="1.5" r="1" stroke="#4B5563" strokeWidth="1"/>
-                    <path d="M4.5 3.5v7M4.5 5.5C4.5 4.4 5.4 3.5 6.5 3.5h1C8.6 3.5 9.5 4.4 9.5 5.5v5" stroke="#4B5563" strokeWidth="1"/>
+                    <rect x="0.5" y="3.5" width="2" height="7" stroke="#555555" strokeWidth="1"/>
+                    <circle cx="1.5" cy="1.5" r="1" stroke="#555555" strokeWidth="1"/>
+                    <path d="M4.5 3.5v7M4.5 5.5C4.5 4.4 5.4 3.5 6.5 3.5h1C8.6 3.5 9.5 4.4 9.5 5.5v5" stroke="#555555" strokeWidth="1"/>
                   </svg>
                 </div>
               )}

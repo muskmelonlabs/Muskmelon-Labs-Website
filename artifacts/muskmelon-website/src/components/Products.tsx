@@ -1,6 +1,5 @@
 import { FadeIn } from "./FadeIn";
 
-/* ── SVG Illustrations ── */
 function IllustGit() {
   return (
     <svg viewBox="0 0 120 80" fill="none" style={{ width: 120, height: 80 }}>
@@ -55,7 +54,7 @@ function IllustAutomation() {
       <rect x="10" y="28" width="22" height="24" stroke="currentColor" strokeWidth="1.5"/>
       <rect x="49" y="20" width="22" height="40" stroke="currentColor" strokeWidth="1.5"/>
       <rect x="88" y="32" width="22" height="20" stroke="currentColor" strokeWidth="1.5"/>
-      <line x1="32" y1="40" x2="49" y2="40" stroke="currentColor" strokeWidth="1.5" markerEnd="url(#arr)"/>
+      <line x1="32" y1="40" x2="49" y2="40" stroke="currentColor" strokeWidth="1.5"/>
       <line x1="71" y1="40" x2="88" y2="40" stroke="currentColor" strokeWidth="1.5"/>
       <polygon points="86,36 94,40 86,44" fill="currentColor"/>
       <polygon points="47,36 39,40 47,44" fill="currentColor"/>
@@ -104,11 +103,10 @@ const products = [
 export function Products() {
   return (
     <section id="products" style={{
-      background: "#0B0F14",
+      background: "#1e1e1e",
       padding: "96px 64px",
-      borderBottom: "1px solid #1F2937",
+      borderBottom: "1px solid #2e2e2e",
     }}>
-      {/* Header */}
       <FadeIn>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
           <div>
@@ -120,6 +118,7 @@ export function Products() {
               letterSpacing: "-0.03em",
               lineHeight: 1,
               margin: 0,
+              fontFamily: "'Inter', sans-serif",
             }}>
               What We're Building
             </h2>
@@ -136,9 +135,7 @@ export function Products() {
         </div>
       </FadeIn>
 
-      {/* Mixed grid — matches reference layout */}
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-        {/* Row 1: two half-cards */}
         {products.slice(0, 2).map((p, i) => {
           const Illust = illustrations[i];
           const isDark = i === 1;
@@ -154,7 +151,7 @@ export function Products() {
               }}>
                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
                   <div>
-                    <div style={{ fontSize: 10, fontWeight: 700, color: "#374151", letterSpacing: "0.14em", marginBottom: 14 }}>
+                    <div style={{ fontSize: 10, fontWeight: 700, color: "#444444", letterSpacing: "0.14em", marginBottom: 14 }}>
                       {p.num}
                     </div>
                     <h3 style={{ fontSize: 18, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 10 }}>
@@ -162,7 +159,7 @@ export function Products() {
                     </h3>
                     <p style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.65 }}>{p.desc}</p>
                   </div>
-                  <div style={{ color: isDark ? "#FF6A00" : "#374151", flexShrink: 0, marginLeft: 24, opacity: isDark ? 0.8 : 0.5 }}>
+                  <div style={{ color: isDark ? "#FF6A00" : "#444444", flexShrink: 0, marginLeft: 24, opacity: isDark ? 0.8 : 0.5 }}>
                     <Illust />
                   </div>
                 </div>
@@ -183,7 +180,6 @@ export function Products() {
           );
         })}
 
-        {/* Row 2: three third-cards */}
         <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
           {products.slice(2, 5).map((p, i) => {
             const Illust = illustrations[i + 2];
@@ -199,10 +195,10 @@ export function Products() {
                   gap: 20,
                 }}>
                   <div>
-                    <div style={{ color: highlight ? "rgba(0,0,0,0.3)" : "#374151", marginBottom: 16, fontSize: 10, fontWeight: 700, letterSpacing: "0.14em" }}>
+                    <div style={{ color: highlight ? "rgba(0,0,0,0.3)" : "#444444", marginBottom: 16, fontSize: 10, fontWeight: 700, letterSpacing: "0.14em" }}>
                       {p.num}
                     </div>
-                    <div style={{ color: highlight ? "rgba(0,0,0,0.6)" : "#4B5563", marginBottom: 16 }}>
+                    <div style={{ color: highlight ? "rgba(0,0,0,0.6)" : "#555555", marginBottom: 16 }}>
                       <Illust />
                     </div>
                     <h3 style={{
@@ -236,7 +232,6 @@ export function Products() {
           })}
         </div>
 
-        {/* Row 3: last card full width */}
         <FadeIn delay={5 * 60} style={{ gridColumn: "1 / -1" }}>
           {(() => {
             const p = products[5];
@@ -250,7 +245,7 @@ export function Products() {
                 gap: 48,
               }}>
                 <div>
-                  <div style={{ fontSize: 10, fontWeight: 700, color: "#374151", letterSpacing: "0.14em", marginBottom: 12 }}>
+                  <div style={{ fontSize: 10, fontWeight: 700, color: "#444444", letterSpacing: "0.14em", marginBottom: 12 }}>
                     {p.num}
                   </div>
                   <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 8 }}>
@@ -258,7 +253,7 @@ export function Products() {
                   </h3>
                   <p style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.65 }}>{p.desc}</p>
                 </div>
-                <div style={{ color: "#374151", opacity: 0.5 }}>
+                <div style={{ color: "#444444", opacity: 0.5 }}>
                   <Illust />
                 </div>
                 <div style={{ textAlign: "right" }}>

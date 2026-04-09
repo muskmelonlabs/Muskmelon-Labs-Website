@@ -4,18 +4,17 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export function Footer() {
   return (
-    <footer style={{ background: "#0B0F14", borderTop: "1px solid #1F2937" }}>
-      {/* Top row */}
+    <footer style={{ background: "#1e1e1e", borderTop: "1px solid #2e2e2e" }}>
       <div style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "36px 64px",
-        borderBottom: "1px solid #1F2937",
+        borderBottom: "1px solid #2e2e2e",
       }}>
         <a href={`${BASE}/`} style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <Logo size={24} />
-          <span style={{ fontSize: 13, fontWeight: 800, color: "#9CA3AF", letterSpacing: "-0.015em" }}>
+          <span style={{ fontSize: 13, fontWeight: 800, color: "#9CA3AF", letterSpacing: "-0.015em", fontFamily: "'Inter', sans-serif" }}>
             Muskmelon Labs
           </span>
         </a>
@@ -31,11 +30,11 @@ export function Footer() {
           ].map(l => (
             <a key={l.label} href={l.href} style={{
               fontSize: 12,
-              color: "#374151",
+              color: "#444444",
               transition: "color 0.15s",
             }}
             onMouseEnter={e => (e.currentTarget.style.color = "#9CA3AF")}
-            onMouseLeave={e => (e.currentTarget.style.color = "#374151")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#444444")}
             >
               {l.label}
             </a>
@@ -61,25 +60,24 @@ export function Footer() {
         </a>
       </div>
 
-      {/* Bottom row */}
       <div style={{
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
         padding: "20px 64px",
       }}>
-        <span style={{ fontSize: 11, color: "#1F2937" }}>
+        <span style={{ fontSize: 11, color: "#2e2e2e" }}>
           © 2025 Muskmelon Labs. All rights reserved.
         </span>
         <div style={{ display: "flex", gap: 24 }}>
           {["Privacy Policy", "Terms of Service"].map(l => (
             <a key={l} href="#" style={{
               fontSize: 11,
-              color: "#1F2937",
+              color: "#2e2e2e",
               transition: "color 0.15s",
             }}
-            onMouseEnter={e => (e.currentTarget.style.color = "#374151")}
-            onMouseLeave={e => (e.currentTarget.style.color = "#1F2937")}
+            onMouseEnter={e => (e.currentTarget.style.color = "#444444")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#2e2e2e")}
             >
               {l}
             </a>

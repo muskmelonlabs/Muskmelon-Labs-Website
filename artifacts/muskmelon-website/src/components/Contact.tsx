@@ -12,16 +12,15 @@ export function Contact() {
 
   return (
     <section id="contact" style={{
-      background: "#080C10",
+      background: "#161616",
       padding: "96px 64px",
-      borderTop: "1px solid #1F2937",
+      borderTop: "1px solid #2e2e2e",
     }}>
       <FadeIn>
         <div className="section-label">Contact</div>
       </FadeIn>
 
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start" }}>
-        {/* Left */}
         <FadeIn delay={40}>
           <div>
             <h2 style={{
@@ -31,6 +30,7 @@ export function Contact() {
               letterSpacing: "-0.03em",
               lineHeight: 1.1,
               marginBottom: 20,
+              fontFamily: "'Inter', sans-serif",
             }}>
               Let's Build Something
               <br />
@@ -42,7 +42,6 @@ export function Contact() {
               we want to hear about it.
             </p>
 
-            {/* Decorative star */}
             <svg viewBox="0 0 160 160" width="160" height="160" fill="none" style={{ opacity: 0.15 }}>
               {[0,30,60,90,120,150].map(a => (
                 <line key={a}
@@ -56,21 +55,20 @@ export function Contact() {
               <circle cx="80" cy="80" r="8" fill="#FF6A00" />
             </svg>
 
-            {/* Info rows */}
-            <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
+            <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
               {[
                 { label: "Email",    val: "hello@muskmelonlabs.com" },
                 { label: "Response", val: "< 48 hours" },
                 { label: "Focus",    val: "Open systems · AI · Infrastructure" },
               ].map(row => (
                 <div key={row.label} style={{
-                  background: "#0B0F14",
+                  background: "#1e1e1e",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
                   padding: "14px 20px",
                 }}>
-                  <span style={{ fontSize: 10, fontWeight: 700, color: "#374151", letterSpacing: "0.12em", textTransform: "uppercase" }}>
+                  <span style={{ fontSize: 10, fontWeight: 700, color: "#555555", letterSpacing: "0.12em", textTransform: "uppercase" }}>
                     {row.label}
                   </span>
                   <span style={{ fontSize: 12, color: "#9CA3AF" }}>{row.val}</span>
@@ -80,11 +78,10 @@ export function Contact() {
           </div>
         </FadeIn>
 
-        {/* Right: form */}
         <FadeIn delay={120}>
           {sent ? (
             <div style={{
-              background: "#111827",
+              background: "#252525",
               border: "1px solid rgba(255,106,0,0.3)",
               padding: "64px 40px",
               textAlign: "center",
@@ -107,19 +104,19 @@ export function Contact() {
               <div style={{ fontSize: 13, color: "#9CA3AF" }}>We'll be in touch within 48 hours.</div>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
               {[
                 { key: "name",  label: "Name",  type: "text",  ph: "Your name" },
                 { key: "email", label: "Email", type: "email", ph: "your@email.com" },
               ].map(field => (
-                <div key={field.key} style={{ background: "#111827", padding: "18px 20px" }}>
+                <div key={field.key} style={{ background: "#252525", padding: "18px 20px" }}>
                   <label style={{
                     display: "block",
                     fontSize: 9,
                     fontWeight: 700,
                     letterSpacing: "0.18em",
                     textTransform: "uppercase",
-                    color: "#374151",
+                    color: "#555555",
                     marginBottom: 8,
                   }}>
                     {field.label}
@@ -142,14 +139,14 @@ export function Contact() {
                 </div>
               ))}
 
-              <div style={{ background: "#111827", padding: "18px 20px" }}>
+              <div style={{ background: "#252525", padding: "18px 20px" }}>
                 <label style={{
                   display: "block",
                   fontSize: 9,
                   fontWeight: 700,
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
-                  color: "#374151",
+                  color: "#555555",
                   marginBottom: 8,
                 }}>
                   Message
@@ -182,7 +179,7 @@ export function Contact() {
                 justifyContent: "space-between",
                 border: "none",
               }}>
-                <span>Send Message</span>
+                <span>Start a Conversation</span>
                 <span>→</span>
               </button>
             </form>

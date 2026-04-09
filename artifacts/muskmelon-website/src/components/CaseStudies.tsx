@@ -21,10 +21,10 @@ const cases = [
 export function CaseStudies() {
   return (
     <section id="work" style={{
-      background: "#080C10",
+      background: "#161616",
       padding: "96px 64px",
-      borderBottom: "1px solid #1F2937",
-      borderTop: "1px solid #1F2937",
+      borderBottom: "1px solid #2e2e2e",
+      borderTop: "1px solid #2e2e2e",
     }}>
       <FadeIn>
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
@@ -37,6 +37,7 @@ export function CaseStudies() {
               letterSpacing: "-0.03em",
               lineHeight: 1,
               margin: 0,
+              fontFamily: "'Inter', sans-serif",
             }}>
               What We've Built
             </h2>
@@ -44,18 +45,17 @@ export function CaseStudies() {
         </div>
       </FadeIn>
 
-      {/* 3-column with dividers — matches reference */}
       <div style={{
         display: "grid",
         gridTemplateColumns: "1fr 1fr 1fr",
-        background: "#111827",
-        border: "1px solid #1F2937",
+        background: "#252525",
+        border: "1px solid #2e2e2e",
       }}>
         {cases.map((c, i) => (
           <FadeIn key={c.title} delay={i * 80}>
             <div style={{
               padding: "40px 36px",
-              borderRight: i < cases.length - 1 ? "1px solid #1F2937" : "none",
+              borderRight: i < cases.length - 1 ? "1px solid #2e2e2e" : "none",
               display: "flex",
               flexDirection: "column",
               gap: 20,
@@ -78,7 +78,7 @@ export function CaseStudies() {
                   {c.desc}
                 </p>
               </div>
-              <div style={{ marginTop: "auto", paddingTop: 20, borderTop: "1px solid #1F2937" }}>
+              <div style={{ marginTop: "auto", paddingTop: 20, borderTop: "1px solid #2e2e2e" }}>
                 <a href="#contact" style={{
                   display: "inline-flex",
                   alignItems: "center",

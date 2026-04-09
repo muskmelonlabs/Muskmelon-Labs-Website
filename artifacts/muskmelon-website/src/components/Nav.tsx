@@ -30,15 +30,15 @@ export function Nav() {
       alignItems: "center",
       justifyContent: "space-between",
       padding: "0 48px",
-      background: scrolled ? "rgba(11,15,20,0.95)" : "transparent",
+      background: scrolled ? "rgba(30,30,30,0.96)" : "transparent",
       backdropFilter: scrolled ? "blur(14px)" : "none",
       WebkitBackdropFilter: scrolled ? "blur(14px)" : "none",
-      borderBottom: scrolled ? "1px solid #1F2937" : "1px solid transparent",
+      borderBottom: scrolled ? "1px solid #2e2e2e" : "1px solid transparent",
       transition: "background 0.3s, border-color 0.3s",
     }}>
       <a href={`${BASE}/`} style={{ display: "flex", alignItems: "center", gap: 10 }}>
         <Logo size={26} />
-        <span style={{ fontSize: 14, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em" }}>
+        <span style={{ fontSize: 14, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", fontFamily: "'Inter', sans-serif" }}>
           Muskmelon Labs
         </span>
       </a>
