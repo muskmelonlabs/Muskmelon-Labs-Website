@@ -1,98 +1,151 @@
 import { FadeIn } from "./FadeIn";
 
+const members = [
+  {
+    name: "Founder",
+    role: "Product & Systems",
+    bio: "Obsessed with building systems that outlast the hype. Loves constraints.",
+    initials: "ML",
+    color: "#FF6A00",
+  },
+  {
+    name: "Lead Engineer",
+    role: "Infrastructure",
+    bio: "Open systems evangelist. If it can be built without a vendor, it will be.",
+    initials: "LE",
+    color: "#2D3F55",
+  },
+  {
+    name: "Design Lead",
+    role: "Product Design",
+    bio: "Systems thinker. Sharp edges, clear hierarchy, no unnecessary decoration.",
+    initials: "DL",
+    color: "#374151",
+  },
+  {
+    name: "AI Researcher",
+    role: "AI / Cognition",
+    bio: "Building tools for thinking — not just tools for generating.",
+    initials: "AR",
+    color: "#1F2937",
+  },
+  {
+    name: "Open Position",
+    role: "Developer",
+    bio: "We're looking for builders who care about systems over features.",
+    initials: "?",
+    color: "#111827",
+    open: true,
+  },
+];
+
 export function Team() {
   return (
-    <section
-      id="team"
-      style={{
-        background: "#080C10",
-        padding: "100px 80px",
-        borderBottom: "1px solid #1F2937",
-      }}
-    >
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
-        <FadeIn>
+    <section id="team" style={{
+      background: "#080C10",
+      padding: "96px 64px",
+      borderBottom: "1px solid #1F2937",
+      borderTop: "1px solid #1F2937",
+    }}>
+      <FadeIn>
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
           <div>
-            <div
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#FF6A00",
-                borderLeft: "2px solid #FF6A00",
-                paddingLeft: 12,
-                marginBottom: 12,
-              }}
-            >
-              Team
-            </div>
-            <h2
-              style={{
-                fontSize: "clamp(32px, 4vw, 52px)",
-                fontWeight: 900,
-                color: "#E5E7EB",
-                letterSpacing: "-0.03em",
-                margin: 0,
-                marginBottom: 24,
-              }}
-            >
+            <div className="section-label">Team</div>
+            <h2 style={{
+              fontSize: "clamp(32px, 4vw, 52px)",
+              fontWeight: 900,
+              color: "#F9FAFB",
+              letterSpacing: "-0.03em",
+              lineHeight: 1,
+              margin: 0,
+            }}>
               The Builders
             </h2>
-            <p
-              style={{
-                fontSize: 15,
-                color: "#9CA3AF",
-                lineHeight: 1.8,
-                margin: 0,
-                maxWidth: 420,
-              }}
-            >
-              Small team. High leverage.
-              Focused on building systems that matter.
-            </p>
           </div>
-        </FadeIn>
+          <p style={{ fontSize: 14, color: "#9CA3AF", lineHeight: 1.7, maxWidth: 280, textAlign: "right" }}>
+            Small team. High leverage.
+            Focused on systems that matter.
+          </p>
+        </div>
+      </FadeIn>
 
-        <FadeIn delay={100}>
-          <div style={{ display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
-            {[
-              { label: "Team size",    val: "Small" },
-              { label: "Leverage",     val: "High" },
-              { label: "Focus",        val: "Systems" },
-              { label: "Philosophy",   val: "Build what matters" },
-            ].map((row) => (
-              <div
-                key={row.label}
-                style={{
-                  background: "#111827",
-                  display: "grid",
-                  gridTemplateColumns: "1fr 1fr",
-                  padding: "20px 24px",
-                }}
-              >
-                <span style={{ fontSize: 11, fontWeight: 600, color: "#4B5563", letterSpacing: "0.1em", textTransform: "uppercase" }}>
-                  {row.label}
-                </span>
-                <span style={{ fontSize: 14, fontWeight: 600, color: "#E5E7EB" }}>
-                  {row.val}
-                </span>
-              </div>
-            ))}
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
+        {members.map((m, i) => (
+          <FadeIn key={m.name} delay={i * 60}>
             <div
+              className={m.open ? "card" : "card"}
               style={{
-                background: "#0B0F14",
-                padding: "20px 24px",
-                fontSize: 11,
-                color: "#374151",
-                letterSpacing: "0.08em",
-                textAlign: "center",
+                padding: "28px 24px",
+                display: "flex",
+                flexDirection: "column",
+                gap: 16,
+                border: m.open ? "1px dashed #1F2937" : "1px solid #1F2937",
               }}
             >
-              Real profiles coming soon.
+              {/* Avatar */}
+              <div style={{
+                width: 52,
+                height: 52,
+                background: m.color,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 14,
+                fontWeight: 800,
+                color: m.open ? "#374151" : "#F9FAFB",
+                letterSpacing: "-0.02em",
+                flexShrink: 0,
+                clipPath: "polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px))",
+              }}>
+                {m.initials}
+              </div>
+
+              <div>
+                <div style={{
+                  fontSize: 14,
+                  fontWeight: 700,
+                  color: m.open ? "#374151" : "#F9FAFB",
+                  letterSpacing: "-0.01em",
+                  marginBottom: 4,
+                }}>
+                  {m.name}
+                </div>
+                <div style={{
+                  fontSize: 10,
+                  fontWeight: 700,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.12em",
+                  color: m.open ? "#2D3F55" : "#FF6A00",
+                  marginBottom: 12,
+                }}>
+                  {m.role}
+                </div>
+                <p style={{ fontSize: 11, color: "#4B5563", lineHeight: 1.6 }}>
+                  {m.bio}
+                </p>
+              </div>
+
+              {/* LinkedIn-style icon */}
+              {!m.open && (
+                <div style={{
+                  marginTop: "auto",
+                  width: 24,
+                  height: 24,
+                  border: "1px solid #1F2937",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                    <rect x="0.5" y="3.5" width="2" height="7" stroke="#4B5563" strokeWidth="1"/>
+                    <circle cx="1.5" cy="1.5" r="1" stroke="#4B5563" strokeWidth="1"/>
+                    <path d="M4.5 3.5v7M4.5 5.5C4.5 4.4 5.4 3.5 6.5 3.5h1C8.6 3.5 9.5 4.4 9.5 5.5v5" stroke="#4B5563" strokeWidth="1"/>
+                  </svg>
+                </div>
+              )}
             </div>
-          </div>
-        </FadeIn>
+          </FadeIn>
+        ))}
       </div>
     </section>
   );

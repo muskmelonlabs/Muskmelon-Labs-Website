@@ -1,54 +1,41 @@
 import { FadeIn } from "./FadeIn";
 
-const items = [
-  "Open Systems",
-  "AI Tools",
-  "Developer First",
-  "Built for Scale",
-];
+const pillars = ["Open Systems", "AI Tools", "Developer First", "Built for Scale", "No Vendor Lock-in", "Ship Early"];
 
 export function Trust() {
   return (
-    <section
-      style={{
-        background: "#080C10",
-        borderBottom: "1px solid #1F2937",
-        padding: "28px 80px",
+    <section style={{
+      background: "#080C10",
+      borderBottom: "1px solid #1F2937",
+      padding: "0 64px",
+      overflow: "hidden",
+    }}>
+      <div style={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 0,
-      }}
-    >
-      {items.map((item, i) => (
-        <FadeIn key={item} delay={i * 60}>
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: 0,
+        alignItems: "stretch",
+      }}>
+        {pillars.map((p, i) => (
+          <FadeIn key={p} delay={i * 40} style={{ flex: 1 }}>
+            <div style={{
+              borderRight: i < pillars.length - 1 ? "1px solid #1F2937" : "none",
+              padding: "20px 24px",
+              textAlign: "center",
+              fontSize: 11,
+              fontWeight: 700,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "#374151",
+              transition: "color 0.2s",
+              cursor: "default",
             }}
-          >
-            <div
-              style={{
-                padding: "10px 40px",
-                fontSize: 11,
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: "#4B5563",
-                borderRight: i < items.length - 1 ? "1px solid #1F2937" : "none",
-                transition: "color 0.2s",
-                cursor: "default",
-              }}
-              onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.color = "#9CA3AF")}
-              onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.color = "#4B5563")}
+            onMouseEnter={e => (e.currentTarget.style.color = "#9CA3AF")}
+            onMouseLeave={e => (e.currentTarget.style.color = "#374151")}
             >
-              {item}
+              {p}
             </div>
-          </div>
-        </FadeIn>
-      ))}
+          </FadeIn>
+        ))}
+      </div>
     </section>
   );
 }

@@ -11,77 +11,65 @@ export function Contact() {
   };
 
   return (
-    <section
-      id="contact"
-      style={{
-        background: "#080C10",
-        padding: "100px 80px",
-        borderBottom: "1px solid #1F2937",
-      }}
-    >
+    <section id="contact" style={{
+      background: "#080C10",
+      padding: "96px 64px",
+      borderTop: "1px solid #1F2937",
+    }}>
+      <FadeIn>
+        <div className="section-label">Contact</div>
+      </FadeIn>
+
       <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start" }}>
-        <FadeIn>
+        {/* Left */}
+        <FadeIn delay={40}>
           <div>
-            <div
-              style={{
-                fontSize: 10,
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                color: "#FF6A00",
-                borderLeft: "2px solid #FF6A00",
-                paddingLeft: 12,
-                marginBottom: 12,
-              }}
-            >
-              Contact
-            </div>
-            <h2
-              style={{
-                fontSize: "clamp(28px, 3.5vw, 48px)",
-                fontWeight: 900,
-                color: "#E5E7EB",
-                letterSpacing: "-0.03em",
-                margin: 0,
-                marginBottom: 24,
-                lineHeight: 1.1,
-              }}
-            >
+            <h2 style={{
+              fontSize: "clamp(28px, 3.5vw, 48px)",
+              fontWeight: 900,
+              color: "#F9FAFB",
+              letterSpacing: "-0.03em",
+              lineHeight: 1.1,
+              marginBottom: 20,
+            }}>
               Let's Build Something
               <br />
               <span style={{ color: "#FF6A00" }}>Interesting.</span>
             </h2>
-            <p
-              style={{
-                fontSize: 14,
-                color: "#9CA3AF",
-                lineHeight: 1.8,
-                margin: 0,
-                maxWidth: 360,
-              }}
-            >
+            <p style={{ fontSize: 14, color: "#9CA3AF", lineHeight: 1.8, maxWidth: 360, marginBottom: 48 }}>
               We're selective about what we take on.
-              If you've got an unconventional problem,
+              If you have an unconventional problem,
               we want to hear about it.
             </p>
 
-            {/* Contact info rows */}
-            <div style={{ marginTop: 48, display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
+            {/* Decorative star */}
+            <svg viewBox="0 0 160 160" width="160" height="160" fill="none" style={{ opacity: 0.15 }}>
+              {[0,30,60,90,120,150].map(a => (
+                <line key={a}
+                  x1={80 + 72 * Math.cos((a * Math.PI)/180)}
+                  y1={80 + 72 * Math.sin((a * Math.PI)/180)}
+                  x2={80 - 72 * Math.cos((a * Math.PI)/180)}
+                  y2={80 - 72 * Math.sin((a * Math.PI)/180)}
+                  stroke="#FF6A00" strokeWidth="4"
+                />
+              ))}
+              <circle cx="80" cy="80" r="8" fill="#FF6A00" />
+            </svg>
+
+            {/* Info rows */}
+            <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
               {[
                 { label: "Email",    val: "hello@muskmelonlabs.com" },
-                { label: "Focus",    val: "Open systems, AI, infrastructure" },
                 { label: "Response", val: "< 48 hours" },
-              ].map((row) => (
-                <div
-                  key={row.label}
-                  style={{
-                    background: "#0B0F14",
-                    display: "flex",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    padding: "14px 20px",
-                  }}
-                >
+                { label: "Focus",    val: "Open systems · AI · Infrastructure" },
+              ].map(row => (
+                <div key={row.label} style={{
+                  background: "#0B0F14",
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "14px 20px",
+                }}>
                   <span style={{ fontSize: 10, fontWeight: 700, color: "#374151", letterSpacing: "0.12em", textTransform: "uppercase" }}>
                     {row.label}
                   </span>
@@ -92,45 +80,48 @@ export function Contact() {
           </div>
         </FadeIn>
 
-        <FadeIn delay={100}>
+        {/* Right: form */}
+        <FadeIn delay={120}>
           {sent ? (
-            <div
-              style={{
-                background: "#111827",
-                border: "1px solid rgba(255,106,0,0.3)",
-                padding: "60px 40px",
-                textAlign: "center",
-              }}
-            >
-              <div style={{ fontSize: 32, marginBottom: 16 }}>✓</div>
-              <div style={{ fontSize: 16, fontWeight: 700, color: "#E5E7EB", marginBottom: 8 }}>
-                Message received.
-              </div>
-              <div style={{ fontSize: 13, color: "#9CA3AF" }}>
-                We'll be in touch within 48 hours.
-              </div>
+            <div style={{
+              background: "#111827",
+              border: "1px solid rgba(255,106,0,0.3)",
+              padding: "64px 40px",
+              textAlign: "center",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: 14,
+            }}>
+              <div style={{
+                width: 48,
+                height: 48,
+                border: "2px solid #FF6A00",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 20,
+                color: "#FF6A00",
+              }}>✓</div>
+              <div style={{ fontSize: 18, fontWeight: 700, color: "#F9FAFB" }}>Message received.</div>
+              <div style={{ fontSize: 13, color: "#9CA3AF" }}>We'll be in touch within 48 hours.</div>
             </div>
           ) : (
-            <form
-              onSubmit={handleSubmit}
-              style={{ display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}
-            >
+            <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 1, background: "#1F2937" }}>
               {[
-                { key: "name",  label: "Name",    type: "text",  ph: "Your name" },
-                { key: "email", label: "Email",   type: "email", ph: "your@email.com" },
-              ].map((field) => (
-                <div key={field.key} style={{ background: "#111827", padding: "20px 24px" }}>
-                  <label
-                    style={{
-                      display: "block",
-                      fontSize: 9,
-                      fontWeight: 700,
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      color: "#4B5563",
-                      marginBottom: 10,
-                    }}
-                  >
+                { key: "name",  label: "Name",  type: "text",  ph: "Your name" },
+                { key: "email", label: "Email", type: "email", ph: "your@email.com" },
+              ].map(field => (
+                <div key={field.key} style={{ background: "#111827", padding: "18px 20px" }}>
+                  <label style={{
+                    display: "block",
+                    fontSize: 9,
+                    fontWeight: 700,
+                    letterSpacing: "0.18em",
+                    textTransform: "uppercase",
+                    color: "#374151",
+                    marginBottom: 8,
+                  }}>
                     {field.label}
                   </label>
                   <input
@@ -138,7 +129,7 @@ export function Contact() {
                     required
                     placeholder={field.ph}
                     value={form[field.key as keyof typeof form]}
-                    onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
+                    onChange={e => setForm({ ...form, [field.key]: e.target.value })}
                     style={{
                       width: "100%",
                       background: "transparent",
@@ -146,25 +137,21 @@ export function Contact() {
                       outline: "none",
                       fontSize: 14,
                       color: "#E5E7EB",
-                      fontFamily: "inherit",
-                      padding: 0,
                     }}
                   />
                 </div>
               ))}
 
-              <div style={{ background: "#111827", padding: "20px 24px" }}>
-                <label
-                  style={{
-                    display: "block",
-                    fontSize: 9,
-                    fontWeight: 700,
-                    letterSpacing: "0.16em",
-                    textTransform: "uppercase",
-                    color: "#4B5563",
-                    marginBottom: 10,
-                  }}
-                >
+              <div style={{ background: "#111827", padding: "18px 20px" }}>
+                <label style={{
+                  display: "block",
+                  fontSize: 9,
+                  fontWeight: 700,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: "#374151",
+                  marginBottom: 8,
+                }}>
                   Message
                 </label>
                 <textarea
@@ -172,7 +159,7 @@ export function Contact() {
                   rows={5}
                   placeholder="Tell us about your problem..."
                   value={form.message}
-                  onChange={(e) => setForm({ ...form, message: e.target.value })}
+                  onChange={e => setForm({ ...form, message: e.target.value })}
                   style={{
                     width: "100%",
                     background: "transparent",
@@ -181,32 +168,22 @@ export function Contact() {
                     resize: "none",
                     fontSize: 14,
                     color: "#E5E7EB",
-                    fontFamily: "inherit",
-                    padding: 0,
                   }}
                 />
               </div>
 
-              <button
-                type="submit"
-                className="btn-primary"
-                style={{
-                  padding: "18px 24px",
-                  fontSize: 12,
-                  fontWeight: 700,
-                  letterSpacing: "0.1em",
-                  textTransform: "uppercase",
-                  cursor: "pointer",
-                  border: "none",
-                  fontFamily: "inherit",
-                  textAlign: "left" as const,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                }}
-              >
-                <span>Start a Conversation</span>
-                <span style={{ opacity: 0.7 }}>→</span>
+              <button type="submit" className="btn btn-fill" style={{
+                padding: "18px 24px",
+                fontSize: 12,
+                letterSpacing: "0.1em",
+                textTransform: "uppercase",
+                textAlign: "left",
+                display: "flex",
+                justifyContent: "space-between",
+                border: "none",
+              }}>
+                <span>Send Message</span>
+                <span>→</span>
               </button>
             </form>
           )}

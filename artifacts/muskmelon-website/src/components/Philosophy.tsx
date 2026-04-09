@@ -1,128 +1,106 @@
 import { FadeIn } from "./FadeIn";
 
-const quotes = [
+const testimonials = [
   {
-    text: "We don't build for trends.\nWe build for long-term systems.",
-    attr: null,
+    quote: "We don't build for trends. We build for long-term systems.",
+    name: "On Product Strategy",
+    company: "Muskmelon Labs",
+    initials: "PS",
   },
   {
-    text: "Constraints create innovation.",
-    attr: null,
+    quote: "Constraints create innovation. Every limitation is a forcing function for better thinking.",
+    name: "On Engineering",
+    company: "Muskmelon Labs",
+    initials: "EN",
   },
   {
-    text: "Simplicity scales.",
-    attr: null,
+    quote: "Simplicity scales. Complexity collapses. Choose the former, always.",
+    name: "On Design",
+    company: "Muskmelon Labs",
+    initials: "DS",
   },
 ];
 
 export function Philosophy() {
   return (
-    <section
-      id="vision"
-      style={{
-        background: "#0B0F14",
-        padding: "100px 80px",
-        borderBottom: "1px solid #1F2937",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      {/* Background diagonal lines */}
-      <svg
-        aria-hidden
-        style={{
-          position: "absolute",
-          right: 0,
-          top: 0,
-          height: "100%",
-          width: "40%",
-          opacity: 0.03,
-          pointerEvents: "none",
-        }}
-        viewBox="0 0 400 600"
-        preserveAspectRatio="none"
-      >
-        {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-          <line key={i} x1={i * 44} y1="0" x2={i * 44 + 300} y2="600" stroke="#FF6A00" strokeWidth="1" />
-        ))}
-      </svg>
-
+    <section id="vision" style={{
+      background: "#0B0F14",
+      padding: "96px 64px",
+      borderBottom: "1px solid #1F2937",
+    }}>
       <FadeIn>
-        <div
-          style={{
-            fontSize: 10,
-            fontWeight: 700,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: "#FF6A00",
-            borderLeft: "2px solid #FF6A00",
-            paddingLeft: 12,
-            marginBottom: 12,
-          }}
-        >
-          Thinking
+        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
+          <div>
+            <div className="section-label">Thinking</div>
+            <h2 style={{
+              fontSize: "clamp(32px, 4vw, 52px)",
+              fontWeight: 900,
+              color: "#F9FAFB",
+              letterSpacing: "-0.03em",
+              lineHeight: 1,
+              margin: 0,
+            }}>
+              Our Thinking
+            </h2>
+          </div>
         </div>
-        <h2
-          style={{
-            fontSize: "clamp(32px, 4vw, 52px)",
-            fontWeight: 900,
-            color: "#E5E7EB",
-            letterSpacing: "-0.03em",
-            margin: 0,
-            marginBottom: 64,
-          }}
-        >
-          Our Thinking
-        </h2>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 1, background: "#1F2937" }}>
-        {quotes.map((q, i) => (
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
+        {testimonials.map((t, i) => (
           <FadeIn key={i} delay={i * 80}>
-            <div
-              style={{
-                background: "#080C10",
-                padding: "48px 36px",
-                position: "relative",
-              }}
-            >
-              <div
-                style={{
-                  fontSize: 48,
-                  color: "rgba(255,106,0,0.1)",
-                  fontFamily: "Georgia, serif",
-                  lineHeight: 1,
-                  marginBottom: 20,
-                  fontWeight: 900,
-                }}
-              >
-                "
+            <div className="card-dark" style={{
+              padding: "36px 32px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 28,
+              minHeight: 220,
+            }}>
+              {/* Stars row */}
+              <div style={{ display: "flex", gap: 4 }}>
+                {[...Array(5)].map((_, si) => (
+                  <svg key={si} width="12" height="12" viewBox="0 0 12 12" fill="#FF6A00">
+                    <polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/>
+                  </svg>
+                ))}
               </div>
-              <blockquote
-                style={{
-                  fontSize: "clamp(15px, 1.4vw, 18px)",
-                  fontWeight: 600,
-                  color: "#E5E7EB",
-                  lineHeight: 1.55,
-                  letterSpacing: "-0.01em",
-                  margin: 0,
-                  whiteSpace: "pre-line",
-                }}
-              >
-                {q.text}
+
+              <blockquote style={{
+                fontSize: 14,
+                fontWeight: 500,
+                color: "#E5E7EB",
+                lineHeight: 1.7,
+                fontStyle: "italic",
+                margin: 0,
+                flex: 1,
+              }}>
+                "{t.quote}"
               </blockquote>
 
-              {/* Bottom accent line */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 0,
-                  left: 36,
-                  right: 36,
-                  height: 1,
-                  background: "linear-gradient(90deg, rgba(255,106,0,0.3) 0%, transparent 100%)",
-                }}
-              />
+              <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 16, borderTop: "1px solid #1F2937" }}>
+                <div style={{
+                  width: 36,
+                  height: 36,
+                  background: "#111827",
+                  border: "1px solid #2D3F55",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  fontSize: 10,
+                  fontWeight: 800,
+                  color: "#9CA3AF",
+                  letterSpacing: "0.04em",
+                  flexShrink: 0,
+                }}>
+                  {t.initials}
+                </div>
+                <div>
+                  <div style={{ fontSize: 12, fontWeight: 700, color: "#F9FAFB" }}>{t.name}</div>
+                  <div style={{ fontSize: 10, color: "#4B5563", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+                    {t.company}
+                  </div>
+                </div>
+              </div>
             </div>
           </FadeIn>
         ))}
