@@ -1,0 +1,242 @@
+Upgrade the existing /brandbook page into a complete brand system based on a professional brand book structure.
+
+Follow the structure and depth similar to the reference document provided.
+
+---
+
+## 🎯 GOAL
+
+* Convert brandbook page into a full design system
+* Include ALL essential sections
+* Maintain MuskMelon website styling (dark, sharp, minimal)
+* Make it structured like documentation (not marketing)
+
+---
+
+## 🧠 BRAND CONTEXT (IMPORTANT — USE THIS)
+
+MuskMelon logo concept:
+
+* Represents:
+  → experimentation
+  → evolution
+  → unconventional thinking
+
+* Form:
+  → angular, geometric, asymmetric
+  → not perfectly polished → intentionally raw / evolving
+
+* Meaning:
+  → not a static brand
+  → constantly evolving system
+
+* Visual direction:
+  → sharp edges
+  → layered geometry
+  → slightly futuristic
+
+Use this context when explaining logo sections.
+
+---
+
+## 🏗️ BRAND BOOK STRUCTURE (IMPLEMENT ALL)
+
+---
+
+### 1. HERO
+
+Title:
+→ Brand Identity System
+
+Subtitle:
+→ The visual and conceptual foundation of MuskMelon Labs
+
+---
+
+### 2. VISION & MISSION
+
+Create section:
+
+* Vision
+* Mission
+
+Use clean text blocks (no long paragraphs)
+
+---
+
+### 3. VOICE & TONE
+
+Add section explaining:
+
+* Tone:
+  → sharp
+  → minimal
+  → confident
+  → non-corporate
+
+* Include:
+
+  * Do examples
+  * Don’t examples
+
+---
+
+### 4. LOGO SYSTEM (VERY IMPORTANT)
+
+Split into subsections:
+
+#### a. Logo Overview
+
+* Explain concept (use provided context)
+
+#### b. Logo Variations
+
+* Symbol
+* Wordmark
+* Combined
+
+#### c. Construction
+
+* Explain geometric nature
+
+#### d. Clear Space
+
+* Define spacing rules
+
+#### e. Minimum Size
+
+#### f. Logo Misuse (IMPORTANT)
+
+Add DO NOT rules:
+
+* Do not distort
+* Do not change colors
+* Do not add shadows
+* Do not place in shapes
+* Do not use on low contrast backgrounds
+
+---
+
+### 5. COLOR SYSTEM
+
+Add:
+
+#### Primary Colors
+
+* Accent Orange
+* Dark backgrounds
+
+#### Secondary Colors
+
+* Supporting neutrals
+
+#### Usage rules:
+
+* Where to use accent
+* Where NOT to overuse
+
+---
+
+### 6. TYPOGRAPHY
+
+Add:
+
+* Font styles
+* Heading hierarchy
+* Paragraph styles
+
+Show examples:
+
+* H1
+* H2
+* Body
+* CTA
+
+---
+
+### 7. BRAND ELEMENTS
+
+Add:
+
+* Geometric shapes
+* Angular cuts
+* Grid usage
+
+Explain:
+→ These define MuskMelon’s visual identity
+
+---
+
+### 8. PATTERNS & VISUAL LANGUAGE
+
+Add:
+
+* Grid overlays
+* Abstract geometry
+* Motion direction (optional)
+
+---
+
+### 9. SOCIAL / MARKETING GUIDELINES
+
+Add:
+
+* Dark theme usage
+* Content layout rules
+* Example structure (cards/posts)
+
+---
+
+### 10. DOS & DON’TS (GLOBAL)
+
+Create clear section:
+
+#### DO:
+
+* Maintain spacing
+* Use consistent colors
+* Keep minimal layout
+
+#### DON’T:
+
+* Overdesign
+* Use random colors
+* Add rounded styles
+* Break grid system
+
+---
+
+## 🎨 DESIGN RULES
+
+* Keep same styling as website:
+
+  * Dark background
+  * Orange accent
+  * Sharp edges
+  * No rounded corners
+
+* Use:
+
+  * Cards
+  * Grid layout
+  * Section dividers
+
+---
+
+## 📱 RESPONSIVENESS
+
+Ensure all sections:
+
+* Stack properly on mobile
+* Use responsive typography
+
+---
+
+## 🎯 FINAL OUTPUT
+
+* Fully structured brandbook page
+* All sections implemented
+* Styled consistently with website
+* Clean and readable layout
+
+Do NOT change wording style too much — focus on structure first.
