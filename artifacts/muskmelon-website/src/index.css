@@ -34,7 +34,10 @@
 
 @layer base {
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
   body {
     font-family: var(--app-font-sans);
     background: var(--bg);
@@ -42,6 +45,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.5;
+    overflow-x: hidden;
   }
   ::selection { background: rgba(255,106,0,0.28); color: #fff; }
   a { text-decoration: none; color: inherit; }

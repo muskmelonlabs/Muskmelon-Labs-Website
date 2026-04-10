@@ -101,7 +101,6 @@ const products = [
   { num: "06", title: "Data Systems",            desc: "Structured, searchable, extensible. Data as a first-class citizen." },
 ];
 
-/* Consistent angled card style — no orange fill by default */
 const cardBase: CSSProperties = {
   background: "#252525",
   border: "1px solid #2e2e2e",
@@ -120,105 +119,67 @@ export function Products() {
   return (
     <section id="products" style={{
       background: "#1e1e1e",
-      padding: "96px 64px",
+      padding: "96px 0",
       borderBottom: "1px solid #2e2e2e",
     }}>
-      <FadeIn>
-        <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", marginBottom: 48 }}>
-          <div>
-            <div className="section-label">Services</div>
-            <h2 style={{
-              fontSize: "clamp(32px, 4vw, 52px)",
-              fontWeight: 900,
-              color: "#F9FAFB",
-              letterSpacing: "-0.03em",
-              lineHeight: 1,
-              margin: 0,
-              fontFamily: "'Inter', sans-serif",
+      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <FadeIn>
+          <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between" style={{ marginBottom: 48, gap: 16 }}>
+            <div>
+              <div className="section-label">Services</div>
+              <h2 style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                fontWeight: 900,
+                color: "#F9FAFB",
+                letterSpacing: "-0.03em",
+                lineHeight: 1,
+                margin: 0,
+                fontFamily: "'Inter', sans-serif",
+              }}>
+                What We're Building
+              </h2>
+            </div>
+            <p style={{
+              fontSize: 14,
+              color: "#9CA3AF",
+              lineHeight: 1.7,
+              maxWidth: 300,
             }}>
-              What We're Building
-            </h2>
+              Focused product lines built on open systems and intelligent tooling.
+            </p>
           </div>
-          <p style={{
-            fontSize: 14,
-            color: "#9CA3AF",
-            lineHeight: 1.7,
-            maxWidth: 300,
-            textAlign: "right",
-          }}>
-            Focused product lines built on open systems and intelligent tooling.
-          </p>
-        </div>
-      </FadeIn>
+        </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
-        {/* Row 1: two half-cards */}
-        {products.slice(0, 2).map((p, i) => {
-          const Illust = illustrations[i];
-          const style = i === 1 ? cardAlt : cardBase;
-          return (
-            <FadeIn key={p.num} delay={i * 60}>
-              <div
-                style={{ ...style, padding: "36px 32px", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 220, gap: 24 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,106,0,0.4)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 28px rgba(255,106,0,0.06)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "#2e2e2e"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
-              >
-                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
-                  <div>
-                    <div style={{ fontSize: 10, fontWeight: 700, color: "#444444", letterSpacing: "0.14em", marginBottom: 14 }}>
-                      {p.num}
-                    </div>
-                    <h3 style={{ fontSize: 18, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 10 }}>
-                      {p.title}
-                    </h3>
-                    <p style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.65 }}>{p.desc}</p>
-                  </div>
-                  <div style={{ color: "#444444", flexShrink: 0, marginLeft: 24, opacity: 0.5 }}>
-                    <Illust />
-                  </div>
-                </div>
-                <a href="#contact" style={{
-                  display: "inline-flex", alignItems: "center", gap: 6,
-                  fontSize: 11, fontWeight: 700, color: "#FF6A00",
-                  letterSpacing: "0.06em", textTransform: "uppercase",
-                }}>
-                  Learn more <span>→</span>
-                </a>
-              </div>
-            </FadeIn>
-          );
-        })}
-
-        {/* Row 2: three third-cards */}
-        <div style={{ gridColumn: "1 / -1", display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
-          {products.slice(2, 5).map((p, i) => {
-            const Illust = illustrations[i + 2];
-            const style = i % 2 === 0 ? cardBase : cardAlt;
+        {/* All 6 cards: responsive grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: 12 }}>
+          {products.map((p, i) => {
+            const Illust = illustrations[i];
+            const style = i % 2 === 1 ? cardAlt : cardBase;
             return (
-              <FadeIn key={p.num} delay={(i + 2) * 60}>
+              <FadeIn key={p.num} delay={i * 60}>
                 <div
                   style={{ ...style, padding: "28px 24px", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 210, gap: 20 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,106,0,0.4)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 28px rgba(255,106,0,0.06)"; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "#2e2e2e"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
                 >
-                  <div>
-                    <div style={{ color: "#444444", marginBottom: 16, fontSize: 10, fontWeight: 700, letterSpacing: "0.14em" }}>
-                      {p.num}
+                  <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", gap: 12 }}>
+                    <div style={{ flex: 1 }}>
+                      <div style={{ fontSize: 10, fontWeight: 700, color: "#444444", letterSpacing: "0.14em", marginBottom: 12 }}>
+                        {p.num}
+                      </div>
+                      <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 8 }}>
+                        {p.title}
+                      </h3>
+                      <p style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.65 }}>{p.desc}</p>
                     </div>
-                    <div style={{ color: "#555555", marginBottom: 16 }}>
+                    <div style={{ color: "#444444", flexShrink: 0, opacity: 0.5 }}>
                       <Illust />
                     </div>
-                    <h3 style={{ fontSize: 15, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 8 }}>
-                      {p.title}
-                    </h3>
-                    <p style={{ fontSize: 12, color: "#9CA3AF", lineHeight: 1.6 }}>
-                      {p.desc}
-                    </p>
                   </div>
                   <a href="#contact" style={{
                     display: "inline-flex", alignItems: "center", gap: 6,
-                    fontSize: 10, fontWeight: 700, color: "#FF6A00",
-                    letterSpacing: "0.08em", textTransform: "uppercase",
+                    fontSize: 11, fontWeight: 700, color: "#FF6A00",
+                    letterSpacing: "0.06em", textTransform: "uppercase",
                   }}>
                     Learn more <span>→</span>
                   </a>
@@ -227,39 +188,6 @@ export function Products() {
             );
           })}
         </div>
-
-        {/* Row 3: last card full width */}
-        <FadeIn delay={5 * 60} style={{ gridColumn: "1 / -1" }}>
-          {(() => {
-            const p = products[5];
-            const Illust = illustrations[5];
-            return (
-              <div
-                style={{ ...cardBase, padding: "28px 32px", display: "grid", gridTemplateColumns: "1fr auto 1fr", alignItems: "center", gap: 48 }}
-                onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,106,0,0.4)"; (e.currentTarget as HTMLDivElement).style.boxShadow = "0 0 28px rgba(255,106,0,0.06)"; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "#2e2e2e"; (e.currentTarget as HTMLDivElement).style.boxShadow = "none"; }}
-              >
-                <div>
-                  <div style={{ fontSize: 10, fontWeight: 700, color: "#444444", letterSpacing: "0.14em", marginBottom: 12 }}>
-                    {p.num}
-                  </div>
-                  <h3 style={{ fontSize: 16, fontWeight: 800, color: "#F9FAFB", letterSpacing: "-0.02em", marginBottom: 8 }}>
-                    {p.title}
-                  </h3>
-                  <p style={{ fontSize: 13, color: "#9CA3AF", lineHeight: 1.65 }}>{p.desc}</p>
-                </div>
-                <div style={{ color: "#444444", opacity: 0.5 }}>
-                  <Illust />
-                </div>
-                <div style={{ textAlign: "right" }}>
-                  <a href="#contact" className="btn btn-stroke-orange" style={{ padding: "10px 24px", fontSize: 11 }}>
-                    Learn more
-                  </a>
-                </div>
-              </div>
-            );
-          })()}
-        </FadeIn>
       </div>
     </section>
   );

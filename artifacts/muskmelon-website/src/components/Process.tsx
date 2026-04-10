@@ -40,111 +40,113 @@ export function Process() {
   return (
     <section id="process" style={{
       background: "#1e1e1e",
-      padding: "96px 64px",
+      padding: "96px 0",
       borderBottom: "1px solid #2e2e2e",
     }}>
-      <FadeIn>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "flex-start" }}>
-          <div>
-            <div className="section-label">Process</div>
-            <h2 style={{
-              fontSize: "clamp(32px, 4vw, 52px)",
-              fontWeight: 900,
-              color: "#F9FAFB",
-              letterSpacing: "-0.03em",
-              lineHeight: 1,
-              margin: 0,
-              fontFamily: "'Inter', sans-serif",
-            }}>
-              How We Work
-            </h2>
+      <div className="px-4 sm:px-6 lg:px-12" style={{ maxWidth: 1280, margin: "0 auto" }}>
+        <FadeIn>
+          <div className="grid grid-cols-1 lg:grid-cols-2" style={{ gap: "40px 80px", alignItems: "flex-start", marginBottom: 48 }}>
+            <div>
+              <div className="section-label">Process</div>
+              <h2 style={{
+                fontSize: "clamp(32px, 4vw, 52px)",
+                fontWeight: 900,
+                color: "#F9FAFB",
+                letterSpacing: "-0.03em",
+                lineHeight: 1,
+                margin: 0,
+                fontFamily: "'Inter', sans-serif",
+              }}>
+                How We Work
+              </h2>
+            </div>
+            <p style={{ fontSize: 14, color: "#9CA3AF", lineHeight: 1.75, paddingTop: 16 }}>
+              Step-by-step from unconventional idea to production system.
+              Every phase is purposeful; nothing is ceremonial.
+            </p>
           </div>
-          <p style={{ fontSize: 14, color: "#9CA3AF", lineHeight: 1.75, paddingTop: 16 }}>
-            Step-by-step from unconventional idea to production system.
-            Every phase is purposeful; nothing is ceremonial.
-          </p>
-        </div>
-      </FadeIn>
+        </FadeIn>
 
-      <div style={{ marginTop: 48, display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
-        {steps.map((step, i) => {
-          const isOpen = open === i;
-          return (
-            <FadeIn key={step.num} delay={i * 40}>
-              <div
-                style={{
-                  background: isOpen ? "#252525" : "#1e1e1e",
-                  borderLeft: isOpen ? `3px solid #FF6A00` : "3px solid transparent",
-                  cursor: "pointer",
-                  transition: "background 0.2s, border-color 0.2s",
-                }}
-                onClick={() => setOpen(isOpen ? -1 : i)}
-              >
-                <div style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-between",
-                  padding: "22px 28px",
-                  gap: 24,
-                }}>
-                  <div style={{ display: "flex", alignItems: "center", gap: 24 }}>
-                    <span style={{
-                      fontSize: 11,
-                      fontWeight: 700,
-                      color: isOpen ? "#FF6A00" : "#444444",
-                      letterSpacing: "0.12em",
-                      flexShrink: 0,
-                      transition: "color 0.2s",
-                      minWidth: 28,
-                    }}>
-                      {step.num}
-                    </span>
-                    <span style={{
-                      fontSize: 15,
-                      fontWeight: 700,
-                      color: isOpen ? "#F9FAFB" : "#9CA3AF",
-                      letterSpacing: "-0.01em",
-                      transition: "color 0.2s",
-                    }}>
-                      {step.title}
-                    </span>
-                  </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
+          {steps.map((step, i) => {
+            const isOpen = open === i;
+            return (
+              <FadeIn key={step.num} delay={i * 40}>
+                <div
+                  style={{
+                    background: isOpen ? "#252525" : "#1e1e1e",
+                    borderLeft: isOpen ? `3px solid #FF6A00` : "3px solid transparent",
+                    cursor: "pointer",
+                    transition: "background 0.2s, border-color 0.2s",
+                  }}
+                  onClick={() => setOpen(isOpen ? -1 : i)}
+                >
                   <div style={{
-                    width: 28,
-                    height: 28,
-                    border: `1px solid ${isOpen ? "#FF6A00" : "#444444"}`,
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 16,
-                    fontWeight: 300,
-                    color: isOpen ? "#FF6A00" : "#555555",
-                    flexShrink: 0,
-                    transition: "all 0.2s",
-                    transform: isOpen ? "rotate(45deg)" : "none",
+                    justifyContent: "space-between",
+                    padding: "22px 20px",
+                    gap: 16,
                   }}>
-                    +
+                    <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
+                      <span style={{
+                        fontSize: 11,
+                        fontWeight: 700,
+                        color: isOpen ? "#FF6A00" : "#444444",
+                        letterSpacing: "0.12em",
+                        flexShrink: 0,
+                        transition: "color 0.2s",
+                        minWidth: 28,
+                      }}>
+                        {step.num}
+                      </span>
+                      <span style={{
+                        fontSize: 15,
+                        fontWeight: 700,
+                        color: isOpen ? "#F9FAFB" : "#9CA3AF",
+                        letterSpacing: "-0.01em",
+                        transition: "color 0.2s",
+                      }}>
+                        {step.title}
+                      </span>
+                    </div>
+                    <div style={{
+                      width: 28,
+                      height: 28,
+                      border: `1px solid ${isOpen ? "#FF6A00" : "#444444"}`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 16,
+                      fontWeight: 300,
+                      color: isOpen ? "#FF6A00" : "#555555",
+                      flexShrink: 0,
+                      transition: "all 0.2s",
+                      transform: isOpen ? "rotate(45deg)" : "none",
+                    }}>
+                      +
+                    </div>
+                  </div>
+
+                  <div className="accordion-body" style={{
+                    maxHeight: isOpen ? 160 : 0,
+                    opacity: isOpen ? 1 : 0,
+                  }}>
+                    <p style={{
+                      fontSize: 13,
+                      color: "#9CA3AF",
+                      lineHeight: 1.8,
+                      padding: "0 20px 24px 60px",
+                      margin: 0,
+                    }}>
+                      {step.desc}
+                    </p>
                   </div>
                 </div>
-
-                <div className="accordion-body" style={{
-                  maxHeight: isOpen ? 160 : 0,
-                  opacity: isOpen ? 1 : 0,
-                }}>
-                  <p style={{
-                    fontSize: 13,
-                    color: "#9CA3AF",
-                    lineHeight: 1.8,
-                    padding: "0 28px 24px 76px",
-                    margin: 0,
-                  }}>
-                    {step.desc}
-                  </p>
-                </div>
-              </div>
-            </FadeIn>
-          );
-        })}
+              </FadeIn>
+            );
+          })}
+        </div>
       </div>
     </section>
   );
