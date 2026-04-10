@@ -10,6 +10,8 @@ import { Team }         from "@/components/Team";
 import { Philosophy }   from "@/components/Philosophy";
 import { Contact }      from "@/components/Contact";
 import { Footer }       from "@/components/Footer";
+import { About }        from "@/pages/About";
+import { Brandbook }    from "@/pages/Brandbook";
 
 function Home() {
   return (
@@ -53,6 +55,8 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/brandbook" component={Brandbook} />
       <Route component={NotFound} />
     </Switch>
   );

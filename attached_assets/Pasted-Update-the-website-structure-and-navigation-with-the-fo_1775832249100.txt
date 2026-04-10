@@ -1,0 +1,200 @@
+Update the website structure and navigation with the following changes. Keep the existing design system (colors, typography, spacing, sharp edges) consistent across everything.
+
+---
+
+## 🎯 GOAL
+
+* Integrate Brandbook into website properly
+* Improve navigation structure
+* Add About page
+* Fix favicon
+* Maintain visual consistency
+
+---
+
+## 🔥 1. REMOVE BRAND BOOK AS CTA
+
+In Navbar / Hero:
+
+* Remove "Brand Book" button (top right CTA)
+* Replace it with:
+  → "Contact" OR "Get in Touch"
+
+Style:
+
+* Same button style
+* Keep it secondary (outlined or subtle)
+
+---
+
+## 🧩 2. ADD BRAND BOOK INSIDE "WORK" SECTION
+
+Brandbook should NOT be a separate primary page anymore.
+
+Instead:
+
+### In "Work" or "Projects" section:
+
+Add a **new card**:
+
+Title:
+→ Brand Identity System
+
+Description:
+→ A complete brand design system for MuskMelon Labs including logo, color system, typography, and visual language.
+
+CTA inside card:
+→ View Brandbook
+
+---
+
+## 🔗 3. CREATE BRAND BOOK PAGE (CONNECTED)
+
+Create new route:
+
+/brandbook
+
+Requirements:
+
+* Must follow SAME design system:
+
+  * Dark theme
+  * Orange accent
+  * Sharp/angular UI
+  * Same typography
+
+---
+
+### Brandbook Page Structure:
+
+1. Hero:
+
+   * Title: Brand Identity System
+   * Subtitle: Design language behind MuskMelon Labs
+
+2. Sections:
+
+   * Logo
+   * Colors
+   * Typography
+   * Usage Guidelines
+
+3. Layout:
+
+   * Use grid + cards
+   * Keep it minimal, not flashy
+
+---
+
+## ⚠️ IMPORTANT
+
+* This page should feel like:
+  → Documentation / design system
+* NOT like a marketing landing page
+
+---
+
+## 🔗 4. LINK BRAND BOOK CARD
+
+Inside Work section:
+
+* Clicking "View Brandbook" → goes to /brandbook
+
+---
+
+## 👤 5. CREATE ABOUT PAGE
+
+Create new route:
+
+/about
+
+---
+
+### About Page Structure:
+
+1. Hero:
+
+   * Title: About MuskMelon Labs
+
+2. Sections:
+
+   * Vision
+   * What we build
+   * Philosophy (minimal text blocks)
+
+3. Style:
+
+   * Same dark theme
+   * Same spacing system
+   * Minimal + clean
+
+---
+
+## 🔗 6. UPDATE NAVBAR
+
+Navbar should have:
+
+* Work
+* Process
+* About
+* Contact
+
+Remove:
+
+* Brand Book from navbar
+
+---
+
+## 🌐 7. FIX FAVICON
+
+Replace current favicon (orange square) with:
+
+→ MuskMelon logo
+
+Steps:
+
+* Add logo file (favicon.ico or .png)
+* Update in:
+
+For Vite:
+index.html → <link rel="icon" href="/logo.png" />
+
+For Next.js:
+app/layout.tsx → metadata favicon
+
+---
+
+## 🎨 8. MAINTAIN DESIGN CONSISTENCY
+
+Apply same design rules everywhere:
+
+* No rounded corners
+* Sharp edges / angular cuts
+* Same spacing scale
+* Same hover effects
+* Same animation style
+
+---
+
+## 📱 9. RESPONSIVENESS
+
+Ensure:
+
+* Brandbook page is responsive
+* About page is responsive
+* Cards stack properly on mobile
+
+---
+
+## 🎯 FINAL OUTPUT
+
+After completing:
+
+* Show updated navbar
+* Show Work section with Brandbook card
+* Show Brandbook page
+* Show About page
+* Confirm favicon updated
+
+Do NOT change content/copy yet.
+Only structure, routing, and UI updates.
