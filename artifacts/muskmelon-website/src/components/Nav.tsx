@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 import { Logo } from "./Logo";
 
 const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
@@ -6,6 +7,9 @@ const BASE = import.meta.env.BASE_URL.replace(/\/$/, "");
 export function Nav() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [location] = useLocation();
+
+  const isHome = location === "/" || location === "";
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 24);
@@ -13,13 +17,19 @@ export function Nav() {
     return () => window.removeEventListener("scroll", fn);
   }, []);
 
-  const links = [
-    { label: "Services",  href: "#products" },
-    { label: "Work",      href: "#work" },
-    { label: "Process",   href: "#process" },
-    { label: "Team",      href: "#team" },
-    { label: "Contact",   href: "#contact" },
-  ];
+  const links = isHome
+    ? [
+        { label: "Work",    href: "#work" },
+        { label: "Process", href: "#process" },
+        { label: "About",   href: `${BASE}/about` },
+        { label: "Contact", href: "#contact" },
+      ]
+    : [
+        { label: "Work",    href: `${BASE}/#work` },
+        { label: "Process", href: `${BASE}/#process` },
+        { label: "About",   href: `${BASE}/about` },
+        { label: "Contact", href: `${BASE}/#contact` },
+      ];
 
   return (
     <nav style={{
@@ -62,15 +72,13 @@ export function Nav() {
           ))}
         </div>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTA — Get in Touch */}
         <a
-          href={`${BASE}/brand-book/`}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={isHome ? "#contact" : `${BASE}/#contact`}
           className="btn btn-stroke hidden lg:inline-flex"
           style={{ padding: "8px 20px", fontSize: 12 }}
         >
-          Brand Book
+          Get in Touch
         </a>
 
         {/* Hamburger button (mobile only) */}
@@ -132,13 +140,12 @@ export function Nav() {
             </a>
           ))}
           <a
-            href={`${BASE}/brand-book/`}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={isHome ? "#contact" : `${BASE}/#contact`}
             className="btn btn-stroke"
             style={{ marginTop: 16, fontSize: 12, textAlign: "center" }}
+            onClick={() => setMenuOpen(false)}
           >
-            Brand Book
+            Get in Touch
           </a>
         </div>
       )}
