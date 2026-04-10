@@ -70,9 +70,10 @@ export function Team() {
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: 12 }}>
+      {/* align-items: stretch ensures all cards in the row reach same height */}
+      <div style={{ display: "flex", gap: 12, alignItems: "stretch" }}>
         {members.map((m, i) => (
-          <FadeIn key={m.name} delay={i * 60}>
+          <FadeIn key={m.name} delay={i * 60} style={{ flex: 1, display: "flex" }}>
             <div
               style={{
                 background: "#252525",
@@ -81,9 +82,12 @@ export function Team() {
                 flexDirection: "column",
                 gap: 16,
                 border: m.open ? "1px dashed #2e2e2e" : "1px solid #2e2e2e",
+                clipPath: "polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px))",
                 transition: "border-color 0.2s",
+                width: "100%",
               }}
             >
+              {/* Avatar */}
               <div style={{
                 width: 52,
                 height: 52,
@@ -101,7 +105,7 @@ export function Team() {
                 {m.initials}
               </div>
 
-              <div>
+              <div style={{ flex: 1 }}>
                 <div style={{
                   fontSize: 14,
                   fontWeight: 700,
@@ -128,13 +132,13 @@ export function Team() {
 
               {!m.open && (
                 <div style={{
-                  marginTop: "auto",
                   width: 24,
                   height: 24,
                   border: "1px solid #2e2e2e",
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
+                  flexShrink: 0,
                 }}>
                   <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
                     <rect x="0.5" y="3.5" width="2" height="7" stroke="#555555" strokeWidth="1"/>

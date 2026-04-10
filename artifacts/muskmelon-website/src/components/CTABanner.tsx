@@ -4,12 +4,13 @@ export function CTABanner() {
   return (
     <section style={{
       background: "#1e1e1e",
-      padding: "0 64px 64px",
+      padding: "64px 64px",
     }}>
       <FadeIn>
         <div style={{
           background: "#252525",
           border: "1px solid #2e2e2e",
+          clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
           padding: "52px 56px",
           display: "grid",
           gridTemplateColumns: "1fr auto",
@@ -18,24 +19,6 @@ export function CTABanner() {
           position: "relative",
           overflow: "hidden",
         }}>
-          <svg
-            aria-hidden
-            style={{ position: "absolute", right: 200, top: "50%", transform: "translateY(-50%)", opacity: 0.06 }}
-            viewBox="0 0 80 80"
-            width="80"
-            height="80"
-          >
-            {[0,30,60,90,120,150].map(a => (
-              <line key={a}
-                x1={40 + 38 * Math.cos((a * Math.PI)/180)}
-                y1={40 + 38 * Math.sin((a * Math.PI)/180)}
-                x2={40 - 38 * Math.cos((a * Math.PI)/180)}
-                y2={40 - 38 * Math.sin((a * Math.PI)/180)}
-                stroke="#FF6A00" strokeWidth="4"
-              />
-            ))}
-          </svg>
-
           <div>
             <h2 style={{
               fontSize: "clamp(28px, 3vw, 44px)",

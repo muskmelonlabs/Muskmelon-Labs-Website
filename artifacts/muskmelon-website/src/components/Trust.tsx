@@ -10,14 +10,20 @@ export function Trust() {
       padding: "0 64px",
       overflow: "hidden",
     }}>
-      <div style={{
-        display: "flex",
-        alignItems: "stretch",
-      }}>
+      <div style={{ display: "flex", alignItems: "stretch" }}>
         {pillars.map((p, i) => (
-          <FadeIn key={p} delay={i * 40} style={{ flex: 1 }}>
-            <div style={{
+          <FadeIn
+            key={p}
+            delay={i * 40}
+            style={{
+              flex: 1,
               borderRight: i < pillars.length - 1 ? "1px solid #2e2e2e" : "none",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <div style={{
               padding: "20px 24px",
               textAlign: "center",
               fontSize: 11,
@@ -27,6 +33,7 @@ export function Trust() {
               color: "#555555",
               transition: "color 0.2s",
               cursor: "default",
+              width: "100%",
             }}
             onMouseEnter={e => (e.currentTarget.style.color = "#9CA3AF")}
             onMouseLeave={e => (e.currentTarget.style.color = "#555555")}

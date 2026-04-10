@@ -42,20 +42,7 @@ export function Contact() {
               we want to hear about it.
             </p>
 
-            <svg viewBox="0 0 160 160" width="160" height="160" fill="none" style={{ opacity: 0.15 }}>
-              {[0,30,60,90,120,150].map(a => (
-                <line key={a}
-                  x1={80 + 72 * Math.cos((a * Math.PI)/180)}
-                  y1={80 + 72 * Math.sin((a * Math.PI)/180)}
-                  x2={80 - 72 * Math.cos((a * Math.PI)/180)}
-                  y2={80 - 72 * Math.sin((a * Math.PI)/180)}
-                  stroke="#FF6A00" strokeWidth="4"
-                />
-              ))}
-              <circle cx="80" cy="80" r="8" fill="#FF6A00" />
-            </svg>
-
-            <div style={{ marginTop: 40, display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: 1, background: "#2e2e2e" }}>
               {[
                 { label: "Email",    val: "hello@muskmelonlabs.com" },
                 { label: "Response", val: "< 48 hours" },
@@ -83,6 +70,7 @@ export function Contact() {
             <div style={{
               background: "#252525",
               border: "1px solid rgba(255,106,0,0.3)",
+              clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
               padding: "64px 40px",
               textAlign: "center",
               display: "flex",

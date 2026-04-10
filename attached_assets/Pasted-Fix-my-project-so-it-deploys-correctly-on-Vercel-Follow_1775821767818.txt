@@ -1,0 +1,138 @@
+Fix my project so it deploys correctly on Vercel. Follow ALL steps carefully and simplify the setup.
+
+## 🔧 GOAL
+
+* Remove monorepo complexity
+* Ensure Vercel can install dependencies properly
+* Fix build errors (vite, tsc not found)
+* Make this a single-app deployment
+
+---
+
+## 🧹 STEP 1: REMOVE MONOREPO / WORKSPACES
+
+* Remove any:
+
+  * pnpm-workspace.yaml
+  * workspace configurations in package.json
+  * references to multiple packages (api-zod, mockup-sandbox, etc.)
+
+* Keep ONLY one app (frontend)
+
+---
+
+## 📁 STEP 2: CLEAN PROJECT STRUCTURE
+
+Ensure structure looks like:
+
+/project-root
+/src OR /app
+/components
+package.json
+vite.config.js (if using Vite)
+tsconfig.json
+
+Remove:
+
+* /lib/api-zod
+* /mockup-sandbox
+* /artifacts/*
+* Any nested package.json files
+
+---
+
+## 📦 STEP 3: FIX package.json
+
+Update package.json to:
+
+{
+"name": "muskmelon-site",
+"version": "1.0.0",
+"private": true,
+"scripts": {
+"dev": "vite",
+"build": "vite build",
+"preview": "vite preview"
+},
+"dependencies": {
+"react": "latest",
+"react-dom": "latest",
+"vite": "latest",
+"typescript": "latest"
+}
+}
+
+IMPORTANT:
+
+* Move vite and typescript from devDependencies → dependencies
+* Remove ALL unused dependencies
+
+---
+
+## ⚙️ STEP 4: INSTALL CONFIG
+
+Make sure:
+
+* vite.config.js exists
+* tsconfig.json exists
+
+If missing, create standard ones
+
+---
+
+## 🧨 STEP 5: REMOVE PNPM RECURSIVE COMMANDS
+
+Search and REMOVE:
+
+* pnpm -r run build
+* any recursive build scripts
+
+Replace with:
+
+* pnpm install
+* pnpm run build
+
+---
+
+## 🌐 STEP 6: PREPARE FOR VERCEL
+
+Ensure:
+
+* Only ONE package.json in root
+* No nested builds
+* No workspace references
+
+---
+
+## ⚡ STEP 7: TEST BUILD LOCALLY
+
+Run:
+
+pnpm install
+pnpm run build
+
+Fix any errors until build succeeds
+
+---
+
+## 🚀 STEP 8: FINAL VERCEL SETTINGS
+
+Tell me what to set in Vercel dashboard after fixing:
+
+* Build Command
+* Install Command
+* Output Directory
+
+---
+
+## 🎯 FINAL OUTPUT
+
+After completing:
+
+* Show final folder structure
+* Show final package.json
+* Confirm build runs successfully
+* Confirm ready for Vercel deployment
+
+Do NOT keep any unnecessary complexity.
+Keep it minimal and clean.

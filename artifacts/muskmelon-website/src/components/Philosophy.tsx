@@ -1,23 +1,17 @@
 import { FadeIn } from "./FadeIn";
 
-const testimonials = [
+const quotes = [
   {
     quote: "We don't build for trends. We build for long-term systems.",
-    name: "On Product Strategy",
-    company: "Muskmelon Labs",
-    initials: "PS",
+    label: "On Product Strategy",
   },
   {
     quote: "Constraints create innovation. Every limitation is a forcing function for better thinking.",
-    name: "On Engineering",
-    company: "Muskmelon Labs",
-    initials: "EN",
+    label: "On Engineering",
   },
   {
     quote: "Simplicity scales. Complexity collapses. Choose the former, always.",
-    name: "On Design",
-    company: "Muskmelon Labs",
-    initials: "DS",
+    label: "On Design",
   },
 ];
 
@@ -47,59 +41,47 @@ export function Philosophy() {
         </div>
       </FadeIn>
 
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 12 }}>
-        {testimonials.map((t, i) => (
-          <FadeIn key={i} delay={i * 80}>
-            <div className="card-dark" style={{
+      <div style={{ display: "flex", gap: 12, alignItems: "stretch" }}>
+        {quotes.map((t, i) => (
+          <FadeIn key={i} delay={i * 80} style={{ flex: 1, display: "flex" }}>
+            <div style={{
+              background: "#161616",
+              border: "1px solid #2e2e2e",
+              clipPath: "polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 20px 100%, 0 calc(100% - 20px))",
               padding: "36px 32px",
               display: "flex",
               flexDirection: "column",
-              gap: 28,
-              minHeight: 220,
-            }}>
-              <div style={{ display: "flex", gap: 4 }}>
-                {[...Array(5)].map((_, si) => (
-                  <svg key={si} width="12" height="12" viewBox="0 0 12 12" fill="#FF6A00">
-                    <polygon points="6,1 7.5,4.5 11,5 8.5,7.5 9,11 6,9.5 3,11 3.5,7.5 1,5 4.5,4.5"/>
-                  </svg>
-                ))}
-              </div>
+              gap: 24,
+              width: "100%",
+              transition: "border-color 0.2s",
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(255,106,0,0.3)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.borderColor = "#2e2e2e"; }}
+            >
+              {/* Orange bar accent */}
+              <div style={{ width: 32, height: 2, background: "#FF6A00" }} />
 
               <blockquote style={{
-                fontSize: 14,
-                fontWeight: 500,
+                fontSize: 15,
+                fontWeight: 600,
                 color: "#E5E7EB",
-                lineHeight: 1.7,
-                fontStyle: "italic",
+                lineHeight: 1.65,
                 margin: 0,
                 flex: 1,
               }}>
                 "{t.quote}"
               </blockquote>
 
-              <div style={{ display: "flex", alignItems: "center", gap: 14, paddingTop: 16, borderTop: "1px solid #2e2e2e" }}>
-                <div style={{
-                  width: 36,
-                  height: 36,
-                  background: "#252525",
-                  border: "1px solid #444444",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 10,
-                  fontWeight: 800,
-                  color: "#9CA3AF",
-                  letterSpacing: "0.04em",
-                  flexShrink: 0,
-                }}>
-                  {t.initials}
-                </div>
-                <div>
-                  <div style={{ fontSize: 12, fontWeight: 700, color: "#F9FAFB" }}>{t.name}</div>
-                  <div style={{ fontSize: 10, color: "#555555", letterSpacing: "0.08em", textTransform: "uppercase" }}>
-                    {t.company}
-                  </div>
-                </div>
+              <div style={{
+                fontSize: 10,
+                fontWeight: 700,
+                color: "#555555",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                paddingTop: 16,
+                borderTop: "1px solid #2e2e2e",
+              }}>
+                {t.label} · Muskmelon Labs
               </div>
             </div>
           </FadeIn>
