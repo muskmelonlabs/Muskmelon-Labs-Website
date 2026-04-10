@@ -1,4 +1,5 @@
 import { Switch, Route, Router as WouterRouter } from "wouter";
+import { Analytics } from "@vercel/analytics/react";
 import { Nav }          from "@/components/Nav";
 import { Hero }         from "@/components/Hero";
 import { Trust }        from "@/components/Trust";
@@ -62,6 +63,7 @@ export default function App() {
   return (
     <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
       <Router />
+      <Analytics />
     </WouterRouter>
   );
 }
